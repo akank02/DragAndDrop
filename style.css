@@ -1,0 +1,145 @@
+body{
+    background-color: rgb(243, 235, 224);
+}
+.logo a{
+    color: #66545e;
+    font-size: 40px;   
+}
+.logo img{
+    height: 40px;
+    width: 40px;
+    margin-right: 7px;
+
+}
+p{
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 2px; 
+    font-weight: 300px;
+    color: brown;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    height: 35rem;
+}
+.pick{
+    background-color: #f6e0b5;
+    border: 2px #66545e;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px #66545e;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.put{
+    background-color: #f6e0b5;
+    border: 2px #66545e;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px #66545e;
+    border-radius: 10px;
+}
+.dragging{
+    opacity: 50%;
+    border: purple dashed 2px;
+}
+
+/*for the styling of reset button */
+button{
+    cursor: pointer;   
+}
+.btn{
+    display: inline-block;
+    padding: 10px 28px ;
+    background-color: #66545e;
+    color: rgb(243, 235, 224);
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+    line-height: 1.5;
+    font-family: inherit;
+    border: none;
+    vertical-align: middle;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+
+}
+.btn::before,
+.btn::after{
+    content: '';
+    position: absolute;
+    background-color: #f6e0b5;
+}
+
+.btn::before{
+    height: 8px;
+    width: 8px;
+    left: -8px;
+    top: 6px;
+    transition: left 0.2s ease;
+}
+.btn::after{
+    height: 10px;
+    width: 10px;
+    right: -10px;
+    bottom: 6px;
+    transition: right 0.2s ease;
+}
+.btn:hover::before{
+    left: 14px;
+}
+.btn:hover::after{
+    right: 14px;
+}
+
+
+@media(max-width: 1199px) {
+    .container{
+        padding: 0 30px;
+    }
+}
+
+/*when the screen size decreases, here only the font size decreases, and the allignment inside the pick and
+put boxes becomes center*/
+@media(max-width: 991px) {
+    
+    .logo a{
+        font-size: 32px;
+    }
+    .pick{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .put{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
+/*when it gets more smaller*/
+@media(max-width: 767px) {
+    .container{
+        padding: 0 15px;
+    }
+    
+}
+
+/*when it is of mobile size, the put column comes under the pick column, and the size of the boxes,
+changes accordingly!*/
+@media(max-width: 575px) {
+    .pick{
+        grid-column: span 2;
+    }
+    .put{
+        grid-column: span 2;
+    }
+}

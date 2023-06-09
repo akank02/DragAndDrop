@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>drag and drop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--header part only-->
+  <div class="logo">
+    <a href="https://funnelhq.notion.site/Front-end-assignment-bc663f14ba2849d1a49ff66be0f1426f"><img src="images/logo.png" alt="image">FUNNEL HQ DRAG AND DROP</a>
+  </div>
+  <!--container contains two division, pick(contains images) and put(where the images have to be uploaded)-->
+  <div class="container">
+    <div class="pick">
+      <p>Pick from here:</p><br>
+      <img id="drag1" src="images/e6.jpg" alt="picture" width="150px" draggable="true" ondragstart="drag(event)"
+        ondragend="dragend(event)"><br>
+      <img id="drag2" src="images/e7.jpg" alt="picture" width="150px" draggable="true" ondragstart="drag(event)"
+        ondragend="dragend(event)"><br>
+      <img id="drag3" src="images/e5.jpg" alt="picture" width="150px" draggable="true" ondragstart="drag(event)"
+        ondragend="dragend(event)"><br>
+    </div>
+    <div class="put" ondragover="allowDrop(event)" ondrop="drop(event)">
+      <p> Drop Here: </p><br>
+    </div>
+  </div>
+  <!--in the above code, draggable events has been used, -->
+  <button class="btn" name="reset" value="reset">RESET</button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
