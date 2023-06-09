@@ -70,8 +70,8 @@ button{
     user-select: none;
     position: relative;
     overflow: hidden;
-
 }
+
 .btn::before,
 .btn::after{
     content: '';
